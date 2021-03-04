@@ -1,17 +1,17 @@
 class Seed
     def self.seed_data
         10.times do
-            Tweet.create({
-                content: Faker::TvShows::MichaelScott.quote,
-                author: "Michael Scott"
-            })
+            Tweet.new({
+                "content" => Faker::TvShows::MichaelScott.quote,
+                "author" => "Michael Scott"
+            }).save
         end
 
         10.times do
-            Tweet.create({
-                content: Faker::Quote.yoda,
-                author: "Yoda"
-            })
+            Tweet.new({
+                "content" => Faker::Quote.yoda,
+                "author" => "Yoda"
+            }).save
         end
     end
 end
